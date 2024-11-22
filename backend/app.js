@@ -5,6 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require("cors");
 
+require('dotenv').config();  // This will load environment variables from the .env file
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 

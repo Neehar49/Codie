@@ -11,4 +11,4 @@ export const removeClass = (el,className) => {
 };
 
 
-export const api_base_url = "https://codie-5dqz.vercel.app/";
+export const api_base_url = process.env.REACT_APP_API_BASE_URL || "https://codie-5dqz.vercel.app/";
