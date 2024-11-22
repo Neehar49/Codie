@@ -1,0 +1,13 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/react"
+      }
+    ],
+    "env": {
+      "REACT_APP_API_BASE_URL": "https://codie-5dqz.vercel.app/"
+    }
+  }
+  
