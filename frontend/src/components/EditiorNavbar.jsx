@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from "../images/logo.png";
+import { FiDownload } from "react-icons/fi";
 import { CiSaveDown2 } from "react-icons/ci"; // Save icon
 import { MdHome } from "react-icons/md"; // Home icon
 import { useNavigate } from "react-router-dom"; // For navigation
@@ -21,12 +22,17 @@ const EditiorNavbar = () => {
 
   return (
     <>
-      <div className="EditiorNavbar flex items-center justify-between px-[100px] h-[80px] bg-[#141414] relative">
+      <div className="EditiorNavbar flex items-center justify-between px-[100px] h-[80px] bg-[#141414]">
+        {/* Logo */}
         <div className="logo">
-          <img className="w-[150px] cursor-pointer" src={logo} alt="logo" />
+          <img className='w-[150px] cursor-pointer' src={logo} alt="logo" />
         </div>
-        <p>File / <span className="text-[gray]">My first project</span></p>
-        <div className="flex gap-2 relative">
+        
+        {/* File Path */}
+        <p>File / <span className='text-[gray]'>My first project</span></p>
+        
+        {/* Buttons */}
+        <div className="flex gap-2">
           {/* Save Button */}
           <i
             className="p-[8px] btn bg-black rounded-[5px] cursor-pointer text-[20px] relative"
@@ -50,6 +56,8 @@ const EditiorNavbar = () => {
           >
             <MdHome />
           </i>
+
+         
         </div>
       </div>
     </>
