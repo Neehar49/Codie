@@ -1,0 +1,37 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "frontend/package.json",
+        "use": "@vercel/node",
+        "config": {
+          "maxLambdaSize": "50mb" 
+        }
+      },
+      {
+        "src": "frontend/**/*",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "backend/package.json",
+        "use": "@vercel/node"
+      }
+    ],
+    "env": {
+      "PORT": "3000",
+      "DATABASE_URL": "mongodb+srv://neehartiwari0704:g2tIXU91GpzYp0oi@codie.lwr3c.mongodb.net/?retryWrites=true&w=majority&appName=CODIE",  
+      "JWT_SECRET": "0a9c8b48147f11956e8c97752957aa2163dbd366620e25cc18e266bc81603386c0b9ccf9dd6af332952330b3ac9256b7a6741e555a55695cf7b54984c963654c", 
+      "REACT_APP_API_BASE_URL": "https://codie-5dqz.vercel.app"
+    },
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "backend/api/$1" 
+      },
+      {
+        "src": "/(.*)",
+        "dest": "frontend/$1"  /
+      }
+    ]
+  }
+  
