@@ -6,9 +6,10 @@ var userModel = require("../models/userModel");
 var projectModel = require("../models/projectModel");
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get("/", (req, res) => {
+  res.json({ success: true, message: "Backend is running" });
 });
+
 
 const secret = "secret"; // secret key for jwt
 
