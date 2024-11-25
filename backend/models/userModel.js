@@ -1,7 +1,7 @@
 let mongoose = require('mongoose');
 
 // Updated connection string for localhost
-mongoose.connect('mongodb://127.0.0.1:27017/codie', {
+mongoose.connect('mongodb://127.0.0.1:27017/codeIDE', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
