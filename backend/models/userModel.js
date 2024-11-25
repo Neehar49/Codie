@@ -1,13 +1,17 @@
 let mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://neehartiwari0704:g2tIXU91GpzYp0oi@codie.lwr3c.mongodb.net/?retryWrites=true&w=majority&appName=CODIE');
+// Updated connection string for localhost
+mongoose.connect('mongodb://127.0.0.1:27017/codie', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 let userSchema = new mongoose.Schema({
   name: String,
   username: String,
   email: String,
   password: String,
-  date:{
+  date: {
     type: Date,
     default: Date.now
   },

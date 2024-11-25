@@ -11,4 +11,4 @@ export const removeClass = (el,className) => {
 };
 
 
-export const api_base_url = process.env.REACT_APP_API_BASE_URL ;
+export const api_base_url = "http://localhost:5000";
