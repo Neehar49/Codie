@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
+var mongoose = require('mongoose');  // Import mongoose for MongoDB connection
 require('dotenv').config();  // This will load environment variables from the .env file
 
 var indexRouter = require('./routes/index');
@@ -20,6 +21,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Allow cross-origin requests (CORS)
 app.use(cors());
+
+// MongoDB Connection
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('MongoDB connected successfully');
+  } catch (error) {
+    console.error('Error connecting to MongoDB:', error);
+    process.exit(1);  // Exit the process with failure if connection fails
+  }
+};
+
+// Connect to MongoDB
+connectDB();
 
 // Define routes
 app.use('/', indexRouter);
@@ -52,4 +70,3 @@ if (require.main === module) {
     console.log(`Server running on port ${process.env.PORT || 3000}`);
   });
 }
-
